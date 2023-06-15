@@ -1,7 +1,8 @@
 // Check if the current url is allowed
 setInterval(async () => {
     const isAllowedUrl = await isPathAllowed(location.href);
-    updateState({ isAllowedUrl });
+    updateState({isAllowedUrl});
+    if (isAllowedUrl) removeOverlay();
 }, 800);
 
 /*
@@ -81,8 +82,7 @@ const removeOverlay = () => {
     updateOverlayIntensity(0);
     updateMessageVisibility(false);
     updateState({
-        timedOut: false,
-        scrolledOut: false,
+        timedOut: false, scrolledOut: false,
     })
 }
 
