@@ -1,0 +1,74 @@
+{
+  "manifest_version": 2,
+  "name": "Finite",
+  "version": "1.1",
+  "description": "Finite is the antithesis of the mindless scroll. The goal is to allow the usage of distracting websites, but in safe, limited ways - hence the name.\n\nFinite prevents you from doomscrolling or procrastinating on common distracting websites.",
+  "icons": {
+    "16": "assets/icons/finite-logo-16.png",
+    "32": "assets/icons/finite-logo-32.png",
+    "48": "assets/icons/finite-logo-48.png",
+    "64": "assets/icons/finite-logo-64.png",
+    "128": "assets/icons/finite-logo-128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@example.com",
+      "strict_min_version": "42.0"
+    }
+  },
+  "browser_action": {
+    "default_popup": "src/ui/popup.html",
+    "browser_style": true
+  },
+  "options_ui": {
+    "page": "src/ui/options.html",
+    "browser_style": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.instagram.com/*",
+        "*://*.netflix.com/*",
+        "*://*.linkedin.com/*",
+        "*://*.tiktok.com/*",
+        "*://*.reddit.com/*",
+        "*://*.4chan.org/*",
+        "*://*.9gag.com/*",
+        "*://*.badoo.com/*",
+        "*://*.buzzfeed.com/*",
+        "*://*.facebook.com/*",
+        "*://*.imgur.com/*",
+        "*://*.mashable.com/*",
+        "*://*.myspace.com/*",
+        "*://*.pinterest.com/*",
+        "*://*.qzone.qq.com/*",
+        "*://*.skype.com/*",
+        "*://*.snapchat.com/*",
+        "*://*.tagged.com/*",
+        "*://*.tieba.baidu.com/*",
+        "*://*.tumblr.com/*",
+        "*://*.twitter.com/*",
+        "*://*.vimeo.com/*",
+        "*://*.vk.com/*",
+        "*://*.weibo.com/*",
+        "*://*.yy.com/*"
+      ],
+      "js": [
+        "src/constants.js",
+        "src/state.js",
+        "src/helpers.js",
+        "src/finite/index.js",
+        "src/finite/scroll.js",
+        "src/finite/duration.js"
+      ],
+      "css": [
+        "src/styles/finite-styles.css"
+      ]
+    }
+  ]
+}

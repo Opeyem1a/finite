@@ -1,0 +1,66 @@
+.full-screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    pointer-events: none;
+    background-color: rgba(0,0,0,0);
+}
+
+.soft-transition {
+    transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.center-flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-text-container {
+    max-width: 75%;
+}
+
+.center-text {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    line-height: 127%;
+    color: #fafafa;
+    text-align: center;
+    font-weight: 300;
+}
+
+.finite-button {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #FFC635;
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0);
+    color: #FFC635;
+    pointer-events: auto
+}
+
+.finite-button.nude {
+    color: rgba(255, 255, 255, 0.28);
+    border: none;
+}
+
+.finite-button:hover {
+    cursor: pointer;
+    background-color: #FFC635;
+    color: #1b1b1b;
+}
+
+.finite-button.nude:hover {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    text-decoration: underline;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finite - Options</title>
+    <link href="../../assets/bootstrap/v5.0.1/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="p-5">
+<form id="allowed-urls-add-form" class="mb-4">
+    <label for="urlInput" class="form-label">Always allow access to:</label>
+    <div class="d-flex gap-2">
+        <input type="text" class="form-control" id="urlInput" value="" placeholder="www.instagram.com" aria-describedby="urlInputHelp" required>
+        <button type="submit" class="btn btn-primary" id="add-allowed-url-button">
+            <i class="bi bi-plus-lg"></i>
+        </button>
+    </div>
+    <div id="urlInputHelp" class="form-text">
+        Using "*" will be treated as a wildcard.
+        For example: Allowing "*.instagram.com/*" will also allow "www.instagram.com/explore".
+    </div>
+</form>
+<h5>Currently Allowed Websites</h5>
+<form id="allowed-urls-batch-actions-form">
+    <div class="ps-3 pe-1 py-1 my-2 bg-dark d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2">
+            <input class="form-check-input mt-0" type="checkbox" value="" id="allowed-urls-parent-checkbox">
+            <label class="form-check-label text-light small" for="allowed-urls-parent-checkbox" style="opacity: 0.75;">
+                Select all
+            </label>
+        </div>
+        <span id="batch-actions-container">
+                <button type="submit" id="allowed-urls-delete-action" class="btn btn-outline-danger btn-sm"
+                        data-action="delete-selected">
+                    Remove
+                </button>
+            </span>
+    </div>
+    <ul id="allowed-websites-list" class="list-group"></ul>
+</form>
+<script src="../../assets/jquery/v3.6.0/jquery.min.js"></script>
+<script src="../constants.js"></script>
+<script src="./util.js"></script>
+<script src="./options.js"></script>
+</body>
+</html>
