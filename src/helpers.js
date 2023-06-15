@@ -19,8 +19,8 @@ const isPathAllowed = async (currentUrl) => {
     const allowedUrls = response.allowedUrls ?? [];
 
     const convertToRegex = (urlString) => {
-        const escaped = urlString.replace(/[.+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
-        return RegExp(escaped.replaceAll(/\*/g, ".+"));  // replace * (literally) with .+, which is regex for "anything"
+        const escaped = urlString.replace(/[.+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string, this auto-escapes regex characters
+        return RegExp(escaped.replaceAll(/\*/g, ".*"));  // replace * (literally) with .+, which is regex for "anything"
     }
 
     return allowedUrls.some(url => convertToRegex(url).test(currentUrl))
